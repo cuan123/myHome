@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反馈界面</title>
+    
+    <script src="js/flexible.js"></script>
+    <style>
+  body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+        /*底部按钮*/
+        footer {
+            position: fixed; /* 固定定位 */
+            bottom: 0; /* 位于页面底部 */
+            left: 0; /* 左边距离页面左侧 */
+            width: 100%; /* 宽度100% */
+
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+        }
+
+            footer button {
+                margin: 0 10px; /* 按钮间距 */
+                padding: 10px 50px;
+                background-color: #555;
+                color: #fff;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                font-size: 16px; /* 设置按钮文字大小 */
+            }
+
+                footer button:hover {
+                    background-color: #777;
+                }
+    header {
+        background-color: #333;
+        background-size: 100%;
+        color: #fff;
+        padding: 5px;
+        text-align: center;
+
+    }
+        header h1 {
+            font-size: 20px; /* 设置字体大小为20像素 */
+        }
+    </style>
+ </head>
+<body>
+    <header>
+        <h1>信息反馈</h1>
+    </header>
+    <form id="feedback-form">
+        <label for="feedback">反馈信息：</label><br>
+        <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+        <label for="email">您的邮箱：</label><br>
+        <input type="email" id="email" name="email" value=""><br>
+        <button type="submit">确认发送</button>
+    </form>
+    <script>
+        document.getElementById("feedback-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+            var feedback = document.getElementById("feedback").value;
+            var email = document.getElementById("email").value;
+            // 这里可以添加发送邮件的逻辑
+            alert("反馈信息：" + feedback + "\n发送至：" + "管理员成功");
+            send(feedback,email);
+        });
+    </script>
+    <script>
+        function return_html() {
+            var referrer = document.referrer;
+            if (referrer.includes('Recruit.html')) {
+                window.location.href = 'recruitHtml/Recruit.html';
+            } else if (referrer.includes('index.html')) {
+                window.location.href = 'index.html';
+            } else {
+                window.location.href = 'index.html';
+            }
+        }    
+     </script>
+
+     <script>
+        function send(content1,email1){
+      let transporter = nodemailer.createTransport({
+     'host': 'smtp.qq.com',    // 主机
+     'secureConnection': true,    // 使用 SSL
+     'service': 'qq',
+     'port': 465,    // SMTP 端口
+     'auth': {
+         'user': '570086048@qq.com',    // 账号
+         'pass': 'xlgtoqauyqljbcfb' // 授权码
+      }
+});
+     let mailContent = {
+     from: email1, // 发件人地址 灵活填写，我是自己发给自己
+     to: '320003558@qq.com', // 收件人地址
+     subject: 'VR信息反馈', // 主题
+     html: content1 // html body
+};
+                  
+// 发送邮件
+transporter.sendMail(mailContent, (err, info) => {
+    if (err) {
+         console.log('发邮件出错了', err);
+    } else {
+         console.log('邮件发送成功');
+    }
+});
+        }
+       
+     </script>
+    <footer>
+        <button onclick="return_html()">首页</button>
+    </footer>
+</body>
+
+</html>

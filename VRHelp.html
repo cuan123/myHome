@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR设置教程</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+        }
+        /*底部按钮*/
+        footer {
+            position: fixed; /* 固定定位 */
+            bottom: 0; /* 位于页面底部 */
+            left: 0; /* 左边距离页面左侧 */
+            width: 100%; /* 保证容器宽度占满父元素 */
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+            footer button {
+                margin: 0 20px; /* 按钮间距 */
+                padding: 10px 25px;
+                background-color: #555;
+                color: #fff;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                font-size: 16px; /* 设置按钮文字大小 */
+            }
+
+                footer button:hover {
+                    background-color: #777;
+                }
+        /*文字描述*/
+        /* 文字描述容器 */
+        .text-container {
+            text-align: center;
+            margin: 25px auto; /* 上下各留25px的间距，水平居中 */
+            max-width: 600px; /* 可根据需要调整最大宽度 */
+        }
+            /* 文字描述样式 */
+            .text-container p {
+                font-size: 18px;
+                line-height: 0.5; /*行间距*/
+                color: #333;
+            }
+            /*图片*/
+        .centered-image {
+            max-width: calc(100% - 300px); /* 图片最大宽度为屏幕宽度减去左右各150px的间距 */
+            height: auto; /* 保持宽高比 */
+            display: block; /* 确保图片是块级元素 */
+            margin: 0 auto; /* 居中显示图片 */
+        }
+        .centered-image2 {
+            max-width: calc(100% - 250px); /* 图片最大宽度为屏幕宽度减去左右各125px的间距 */
+            height: auto; /* 保持宽高比 */
+            display: block; /* 确保图片是块级元素 */
+            margin: 0 auto; /* 居中显示图片 */
+            
+        }
+        .centered-image3 {
+            max-width: calc(100% - 30px); /* 图片最大宽度为屏幕宽度减去左右各15px的间距 */
+            height: auto; /* 保持宽高比 */
+            display: block; /* 确保图片是块级元素 */
+            margin: 0 auto; /* 居中显示图片 */
+           
+        }
+        .centered-image4 {
+            max-width: calc(100% - 150px); /* 图片最大宽度为屏幕宽度减去左右各25px的间距 */
+            height: auto; /* 保持宽高比 */
+            display: block; /* 确保图片是块级元素 */
+            margin: 0 auto; /* 居中显示图片 */
+            margin-bottom: 80px;
+        }
+    
+        header h1 {
+            font-size: 16px; /* 设置标题字体大小为24像素 */
+        }
+        .footer-button {
+            margin-top: 30px; /* 设置底部按钮与上一个控件之间的间距为20像素 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VR设置教程</h1>
+    </header>
+    <div class="text-container">
+        <p>第一步：准备VR眼镜</p>
+    </div>
+    <img src="help/help1.png" class="centered-image" alt="Centered Image">
+    <div class="text-container">
+        <p>第二步：手机设置开启自动旋转</p>
+    </div>
+    <img src="help/1.jpg" class="centered-image2" alt="Centered Image">
+    <div class="text-container">
+        <p>第三步：手机微信开启横屏模式</p>
+    </div>
+    <img src="help/2.jpg" class="centered-image3" alt="Centered Image">
+    <div class="text-container">
+        <p>第四步：720云画面设置VR全景模式</p>
+    </div>
+    <img src="help/4.jpg" class="centered-image2" alt="Centered Image">
+    <div class="text-container">
+        <p>第五步：手机放入VR眼镜中</p>
+    </div>
+    <img src="help/23.png" class="centered-image4" alt="Centered Image">
+    <footer>
+        <button onclick="window.location.href='index.html'">首页</button>
+    </footer>
+
+</body>
+</html>
