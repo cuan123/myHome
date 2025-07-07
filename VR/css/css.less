@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  @font-face {
+    font-family: bb3812;
+    src: url(../font/bb3812.TTF);
+  }
+  @font-face {
+    font-family: LiShu1;
+    src: url(../font/LiShu1.ttf);
+  }
+  @font-face {
+    font-family: cangezhuangyuankai;
+    src: url(../font/cangezhuangyuankai.ttf);
+  }
+  @font-face {
+    font-family: ch2;
+    src: url(../font/ch2.ttf);
+  }
+
+  body,html {
+    background: url("../images/bg_1.png");
+    z-index: 1;
+    /* max-width: 1920px;*/
+    background-size: 100% 100%;
+    background-size: cover;
+    /* 水平和垂直方向填充100% */
+    background-repeat: no-repeat;
+  }
+  header {
+    height: .75rem;
+    background: url("../images/header1.jpg") no-repeat;
+    opacity: 0.7; /* 70% 透明度 */
+    background-size: 100% 120%;
+  }
+  header h1 {
+    font-size: 0.5rem;
+    color: white;
+    text-align: center;
+    line-height: 1rem;
+    bottom: .15rem;
+    font-family: cangezhuangyuankai;
+    position: relative; /* 相对定位元素 */
+  }
+
+   /*滚动图片专栏*/
+   .slideshow {
+    padding:0px;
+    display: flex;
+    overflow: hidden;
+    width: auto; /* 使用百分比单位 */
+    height: auto;
+    position: relative;
+    aspect-ratio: 12 / 6; /* 设置宽高比 */
+}
+.slide {
+    flex: 0 0 100%;
+    transition: transform 0.5s ease;
+    
+}
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .btn-container {
+      position: absolute;
+      bottom: .4375rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+  }
+  .carousel-btn {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin: 0 .0625rem;
+      cursor: pointer;
+  }
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    width: auto; /* 将宽度设置为自动 */
+    padding: 5px;
+}
+@media (max-width: 600px) {  
+  .stats {  
+    display: flex;
+    width: auto;
+    justify-content: space-around;
+    flex-direction: column; /* 垂直堆叠元素 */  
+    /* 其他针对小屏幕设备的样式 */  
+  }  
+
+  .slideshow {
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  .slide {
+    flex: 0 0 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .btn-container {
+    position: absolute;
+    bottom: 0.5rem; /* 适当调整按钮位置 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 2px; /* 调整按钮间距 */
+    cursor: pointer;
+  }
+}
+
+.image-container {
+  position: relative;
+  width: 100%; /* 宽度占满页面 */
+  height: 0.9rem; /* 自定义高度，您可以根据需要修改这个值 */
+  overflow: hidden; /* 防止图片溢出容器 */
+  display: inline-block;
+  top: -0.35rem;
+}
+
+.image-container img {
+  width: 100%; /* 设置图片宽度占满父容器 */
+  height: 100%; /* 设置图片高度占满父容器，保持宽高比例 */
+  object-fit: cover; /* 填充整个容器并保持纵横比 */
+  opacity: 0.5;
+}
+
+.image-text {
+  position: absolute;
+  top: 20%; /* 文字垂直居中 */
+  left: 50%; /* 文字水平居中 */
+  transform: translate(-50%, -50%); /* 将文字居中 */
+  z-index: 1; /* 确保文字显示在图片上面 */
+  color: white; /* 文字颜色 */
+  font-size: 18px; /* 字体大小 */
+  font-weight: bold; /* 字体粗细 */
+  white-space: nowrap; /* 不换行 */
+  overflow: hidden; /* 隐藏超出部分 */
+  animation: scrollText 15s linear infinite; /* 滚动动画，持续5秒，线性运动，无限循环 */
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* 文字水平向左滚动100% */
+  }
+}
+/*图文按钮区域*/
+.mainbox {
+  display: flex;
+  
+  width: 100%;
+  height: 5rem;
+  margin-top: 0 auto;
+  padding: .0625rem .1875rem 0;
+ 
+}
+.mainbox .colnum {
+
+  flex: 5;
+}
+.mainbox .colnum:nth-child(2) {
+  flex: 5;
+  margin: 0.125rem 0.1875rem;
+}
+.mainbox .panel_1 {
+  top: -0.35rem;
+  position: relative;
+  /* 添加相对定位 */
+  height: 3.125rem;
+  width: 100%;
+  left: .125rem;
+
+  margin-bottom: .125rem;
+  border: 1px solid rgba(25, 186, 139, 0);
+  background: url("../images/Bottun_images/6000204.png") no-repeat;
+  background-size: 100% 100%;
+  
+}
+
+.mainbox .panel_2 {
+  left: .125rem;
+  top: -0.35rem;
+  position: relative;
+  /* 添加相对定位 */
+  height: 1.5rem;
+  width: 100%;
+
+  margin-bottom: .1875rem;
+  margin-top: -0.1rem;
+  border: 1px solid rgba(25, 186, 139, 0);
+  background: url("../images/Bottun_images/6000205.png") no-repeat;
+  background-size: 100% 100%;
+}
+.mainbox .panel_3 {
+  left: .125rem;
+  top: -0.35rem;
+  position: relative;
+  /* 添加相对定位 */
+  height: 3.125rem;
+  width: 100%;
+
+  margin-bottom: .1875rem;
+  margin-top: .125rem;
+  border: 1px solid rgba(25, 186, 139, 0);
+  background: url("../images/Bottun_images/6000206.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+h2{
+  width: 3.75rem;
+  font-size: .25rem;
+  text-align: center;
+  position: absolute;
+  bottom: .125rem; /* 将文本置于底部 */
+  left: 50%; /* 水平居中 */
+  transform: translateX(-50%); /* 水平居中 */
+
+}
+img {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  width: 1rem;
+   height: 0.9rem;
+  transform: translate(-50%, -50%);
+  max-width: 100%; /* 图片宽度最大为父容器宽度 */
+  max-height: 100%; /* 图片高度最大为父容器高度 */
+}
+.img2{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+background: url(../images/Bottun_images/1.png);
+width: 2rem;
+height: 2rem;
+background-size: 100% 100%;
+z-index: 10;
+display: flex;
+}
+.img3{
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+background: url(../images/Bottun_images/4.png);
+width: 2rem;
+height: 2rem;
+background-size: 100% 100%;
+z-index: 10;
+display: flex;
+}
+
+/*底部按钮*/
+footer {
+  position: fixed; /* 固定定位 */
+  bottom: 0; /* 位于页面底部 */
+  left: 0; /* 左边距离页面左侧 */
+  width: 100%; /* 宽度100% */
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+  footer button {
+      margin: 0 10px; /* 按钮间距 */
+      padding: 10px 25px;
+      background-color: #555;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px; /* 设置按钮文字大小 */
+  }
+      footer button:hover {
+          background-color: #777;
+      }
+
+      .no2 {
+        padding: 0.1875rem;
+      }
+      .no2 .no-hd2 {
+        position: relative;
+      }
+      .no2 .no-hd2 ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0; /* 去除内部间距 */
+      }
+      .no2 .no-hd2 ul li {
+        position: relative;
+        flex: none;
+        line-height: 0.25rem;
+        font-size: 0.2rem;
+        font-family: bb3812;
+        color: white;
+        list-style: none; /* 去除列表样式 */
+        margin: 0; /* 去除外边距 */
+        padding: 0; /* 去除内边距 */
+      }
